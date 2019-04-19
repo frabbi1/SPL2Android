@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import kotlinx.android.synthetic.main.authentication.*
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -13,6 +14,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.common.api.ApiException
+import kotlinx.android.synthetic.main.profile_fragment.view.*
 
 import java.io.Serializable
 
@@ -78,6 +80,8 @@ class AuthenticationActivity : AppCompatActivity(), Serializable {
 
             startActivity(intent)
         }
+        //Glide.with(this).load("http://www.ssaurel.com/tmp/logo_ssaurel.png").error(Glide.with(this).load(R.drawable.hope)).into(img);
+
         account?.let {
             var name :String = account.displayName.toString()
             var email = account.email.toString()
