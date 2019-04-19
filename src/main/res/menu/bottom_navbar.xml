@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/navProfile"
+            android:icon="@drawable/ic_face_black_24dp"
+            android:title="Profile"
+    />
+    <item
+            android:id="@+id/navEvents"
+            android:icon="@drawable/ic_event_green_24dp"
+            android:title="Events"
+    />
+    <item
+            android:id="@+id/navJoinEvent"
+            android:icon="@drawable/ic_join_black_24dp"
+            android:title="Join New"
+
+    />
+    <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_signout_new_black_24dp"
+            android:title="Sign Out"
+
+    />
+
+
+</menu>
