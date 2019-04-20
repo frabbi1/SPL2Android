@@ -76,29 +76,29 @@ class AuthenticationActivity : AppCompatActivity(), Serializable {
     private fun updateUI(account: GoogleSignInAccount?) {
         if(account==null){
             Toast.makeText(this, "Log in failed", Toast.LENGTH_LONG).show()
-            val intent = Intent(this, Navigation::class.java)
 
-            startActivity(intent)
         }
         //Glide.with(this).load("http://www.ssaurel.com/tmp/logo_ssaurel.png").error(Glide.with(this).load(R.drawable.hope)).into(img);
 
-        account?.let {
-            var name :String = account.displayName.toString()
-            var email = account.email.toString()
-            var id = account.id.toString()
-            var photo = account.photoUrl.toString()
-            Log.i("AuthenticationActivity", name)
-            Toast.makeText(this, name, Toast.LENGTH_SHORT).show()
+        else{
+            account?.let {
+                var name :String = account.displayName.toString()
+                var email = account.email.toString()
+                var id = account.id.toString()
+                var photo = account.photoUrl.toString()
+                Log.i("AuthenticationActivity", name)
+                Toast.makeText(this, name, Toast.LENGTH_SHORT).show()
 
-            val intent = Intent(this, Navigation::class.java)
-            intent.putExtra("name",name)
-            intent.putExtra("email",email)
-            intent.putExtra("id",id)
-            intent.putExtra("photo",photo)
+                val intent = Intent(this, Navigation::class.java)
+                intent.putExtra("name",name)
+                intent.putExtra("email",email)
+                intent.putExtra("id",id)
+                intent.putExtra("photo",photo)
 
 
-            startActivity(intent)
+                startActivity(intent)
 
+            }
         }
 
 

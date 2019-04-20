@@ -25,19 +25,23 @@
                 android:layout_marginBottom="10dp"
                 android:layout_height="wrap_content"/>
         <TextView android:layout_width="match_parent"
-                  android:text="Name"
+                  android:text="Name (*rquired)"
+                  android:textColor="#4e92d2"
                   android:layout_height="wrap_content"/>
         <EditText android:layout_width="match_parent"
                   android:layout_marginBottom="10dp"
                   android:layout_height="wrap_content"/>
         <TextView android:layout_width="match_parent"
-                  android:text="Age"
+                  android:text="Age (*rquired)"
+                  android:textColor="#4e92d2"
                   android:layout_height="wrap_content"/>
         <EditText android:layout_width="match_parent"
                   android:layout_marginBottom="10dp"
+                  android:inputType="number"
                   android:layout_height="wrap_content"/>
         <TextView android:layout_width="match_parent"
-                  android:text="Gender"
+                  android:text="Gender (*rquired)"
+                  android:textColor="#4e92d2"
                   android:layout_height="wrap_content"/>
         <RadioGroup android:layout_width="match_parent"
                     android:orientation="horizontal"
@@ -55,7 +59,8 @@
         </RadioGroup>
 
         <TextView android:layout_width="match_parent"
-                  android:text="Phone No"
+                  android:text="Phone No (*rquired)"
+                  android:textColor="#4e92d2"
                   android:layout_height="wrap_content"/>
         <EditText android:layout_width="match_parent"
                   android:layout_height="wrap_content"
