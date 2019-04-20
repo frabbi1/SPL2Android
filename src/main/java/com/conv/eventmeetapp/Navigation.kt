@@ -10,15 +10,6 @@ import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import kotlinx.android.synthetic.main.navigation.*
-import android.support.v4.os.HandlerCompat.postDelayed
-import android.content.DialogInterface
-
-
-
-
-
-
-
 
 
 class Navigation : AppCompatActivity() {
@@ -28,6 +19,12 @@ class Navigation : AppCompatActivity() {
     private var email = ""
     private var id = ""
     private var photo = ""
+    private var age = ""
+    private var occupation = ""
+    private var institution = ""
+    private var nationality = ""
+    private var gender = ""
+    private var phone = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +35,13 @@ class Navigation : AppCompatActivity() {
         email = intent.getStringExtra("email")
         id = intent.getStringExtra("id")
         photo = intent.getStringExtra("photo")
+        age = intent.getStringExtra("age")
+        occupation = intent.getStringExtra("occupation")
+        institution = intent.getStringExtra("institution")
+        phone = intent.getStringExtra("phone")
+        nationality = intent.getStringExtra("nationality")
+        gender = intent.getStringExtra("gender")
+
 
         toolbar = supportActionBar!!
         toolbar.title = "Profile"
@@ -98,10 +102,23 @@ class Navigation : AppCompatActivity() {
     override fun onBackPressed() {
         finish()
     }
-    public fun getProfileData():Profile{
-        var profiledData = Profile(name,email,id,photo)
+    fun getProfileData():Profile{
+        var profiledData = Profile(id, name, email, age, gender, occupation, institution, phone, nationality, photo)
         return profiledData
 
     }
+
+
 }
-data class Profile(val name:String, val email:String, val id:String, val photo:String)
+data class Profile(
+    var id : String,
+    var name : String,
+    var email : String,
+    var age : String,
+    var gender : String,
+    var occupation : String?,
+    var institution : String?,
+    var phone : String,
+    var nationality : String?,
+    var photo : String?
+)

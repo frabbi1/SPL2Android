@@ -23,6 +23,8 @@
                 android:name=".Navigation"
                 android:theme="@style/NavTheme">
         </activity>
+        <activity android:name=".InitialEditProfile">
+        </activity>
         <activity android:name=".EditProfile">
         </activity>
     </application>

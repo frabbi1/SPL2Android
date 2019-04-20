@@ -15,7 +15,7 @@ import retrofit2.Call
 import retrofit2.Response
 
 
-class EditProfile : AppCompatActivity() {
+class InitialEditProfile : AppCompatActivity() {
     lateinit var toolbar: ActionBar
     private var name = ""
     private var email = ""
@@ -39,20 +39,8 @@ class EditProfile : AppCompatActivity() {
         email = intent.getStringExtra("email")
         id = intent.getStringExtra("id")
         photo = intent.getStringExtra("photo")
-        age = intent.getStringExtra("age")
-        occupation = intent.getStringExtra("occupation")
-        institution = intent.getStringExtra("institution")
-        phone = intent.getStringExtra("phone")
-        nationality = intent.getStringExtra("nationality")
-        gender = intent.getStringExtra("gender")
-
-        nameF.setText(name)
-        ageF.setText(age)
-        phoneF.setText(phone)
         Glide.with(this).load(photo).into(proPic)
-        occupationF.setText(occupation)
-        insF.setText(institution)
-        nationalityF.setText(nationality)
+        nameF.setText(name)
 
 
         save.setOnClickListener {
@@ -67,8 +55,8 @@ class EditProfile : AppCompatActivity() {
         institution = insF.text.toString()
         occupation = occupationF.text.toString()
         phone = phoneF.text.toString()
-        name = nameF.text.toString()
         age = ageF.text.toString()
+        name = nameF.text.toString()
         nationality = nationalityF.text.toString()
 
         var genderButton = findViewById<RadioButton>(radiogrp.checkedRadioButtonId)
@@ -84,7 +72,7 @@ class EditProfile : AppCompatActivity() {
             override fun onResponse(call: Call<Participant>, response: Response<Participant>){
                 if(response.isSuccessful){
                     var temp = response.body()
-                    val intent = Intent(this@EditProfile, Navigation::class.java)
+                    val intent = Intent(this@InitialEditProfile, Navigation::class.java)
                     intent.putExtra("name",name)
                     intent.putExtra("email",email)
                     intent.putExtra("id",id)
@@ -102,15 +90,15 @@ class EditProfile : AppCompatActivity() {
 
                 }else{
 
-                    Toast.makeText(this@EditProfile, "Failed to save information", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@InitialEditProfile, "Failed to save information", Toast.LENGTH_SHORT)
                         .show()
                 }
             }
 
             override fun onFailure(call: Call<Participant>, t: Throwable) {
                 finish()
-                Toast.makeText(this@EditProfile, "Information save failed", Toast.LENGTH_SHORT)
-                    .show()
+                //Toast.makeText(this@InitialEditProfile, "Information save failed", Toast.LENGTH_SHORT)
+                 //   .show()
 
             }
         })
