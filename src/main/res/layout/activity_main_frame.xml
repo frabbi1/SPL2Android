@@ -56,7 +56,7 @@
                     android:gravity="bottom"
 
 
-                    android:background="@drawable/ic_participant_24dp"
+                    android:background="@drawable/ic_people_24dp"
 
             />
             <Button
@@ -167,7 +167,8 @@
                 android:layout_marginTop="50dp"
                 android:background="@drawable/edit_profile_button"
                 android:textColor="#ffffff"
-                android:text="Ceck In"
+                android:text="Check In"
+                android:id="@+id/btnCheckIn"
                 android:layout_height="match_parent"/>
 
         <Button android:layout_width="match_parent"
@@ -175,6 +176,7 @@
                 android:background="@drawable/shape_button"
                 android:textColor="#ffffff"
                 android:text="Switch out"
+                android:id="@+id/btnSwitchOut"
                 android:layout_height="match_parent"/>
 
 

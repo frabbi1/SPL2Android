@@ -94,6 +94,7 @@ class EditProfile : AppCompatActivity() {
                     val intent = Intent(this@EditProfile, Navigation::class.java)
                     intent.putExtra("id",temp!!.id)
                     startActivity(intent)
+                    finish()
 
 
 
