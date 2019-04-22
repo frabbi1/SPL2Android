@@ -49,10 +49,11 @@ class EditProfile : AppCompatActivity() {
         nameF.setText(name)
         ageF.setText(age)
         phoneF.setText(phone)
-        Glide.with(this).load(photo).into(proPic)
+        Glide.with(this).load(photo).error(Glide.with(this).load(R.drawable.blank_pro_pic)).into(proPic)
         occupationF.setText(occupation)
         insF.setText(institution)
         nationalityF.setText(nationality)
+        radiogrp.check(male.id)
 
 
         save.setOnClickListener {
@@ -72,12 +73,20 @@ class EditProfile : AppCompatActivity() {
         var genderButton = findViewById<RadioButton>(radiogrp.checkedRadioButtonId)
         gender = genderButton.text.toString()
 
-        Toast.makeText(this,gender,Toast.LENGTH_LONG).show()
+        if(name.trim().isEmpty() || age.trim().isEmpty()
+            || gender.trim().isEmpty() || phone.trim().isEmpty()){
+
+
+            Toast.makeText(this, "FIll the required field", Toast.LENGTH_LONG).show()
+            return
+        }
+
+        //Toast.makeText(this,gender,Toast.LENGTH_LONG).show()
 
         val service = ServiceBuilder.buildService(BackEndService::class.java)
-        var newPaticipant = Participant(id, name, email, age, gender, occupation, institution, phone, nationality, photo)
+        var newParticipant = Participant(id, name, email, age, gender, occupation, institution, phone, nationality, photo)
 
-        val requestCall = service.updateParticipant(id,newPaticipant)
+        val requestCall = service.updateParticipant(id,newParticipant)
         requestCall.enqueue(object : retrofit2.Callback<Participant>{
             override fun onResponse(call: Call<Participant>, response: Response<Participant>){
                 if(response.isSuccessful){

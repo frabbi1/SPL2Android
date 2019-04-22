@@ -35,10 +35,7 @@ class ProfileFragment : Fragment(){
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.profile_fragment, container, false)
-        var parent = activity as Navigation
-        //id = parent.getId()
 
-        //var profile = parent.b ()
 
         Glide.with(this).load(profile.photo).apply(RequestOptions.overrideOf(250,200))
             .error(Glide.with(this).load(R.drawable.blank_pro_pic)).into(view.proPic);
