@@ -60,8 +60,6 @@ class EditProfile : AppCompatActivity() {
 
         }
 
-
-
     }
     fun saveInfo(){
         institution = insF.text.toString()
@@ -73,43 +71,33 @@ class EditProfile : AppCompatActivity() {
 
         var genderButton = findViewById<RadioButton>(radiogrp.checkedRadioButtonId)
         gender = genderButton.text.toString()
+
         Toast.makeText(this,gender,Toast.LENGTH_LONG).show()
 
         val service = ServiceBuilder.buildService(BackEndService::class.java)
         var newPaticipant = Participant(id, name, email, age, gender, occupation, institution, phone, nationality, photo)
-        val requestCall = service.addParticipant(newPaticipant)
 
-
+        val requestCall = service.updateParticipant(id,newPaticipant)
         requestCall.enqueue(object : retrofit2.Callback<Participant>{
             override fun onResponse(call: Call<Participant>, response: Response<Participant>){
                 if(response.isSuccessful){
                     var temp = response.body()
                     val intent = Intent(this@EditProfile, Navigation::class.java)
-                    intent.putExtra("name",name)
-                    intent.putExtra("email",email)
-                    intent.putExtra("id",id)
-                    intent.putExtra("photo",photo)
-                    intent.putExtra("age",age)
-                    intent.putExtra("occupation",occupation)
-                    intent.putExtra("institution",institution)
-                    intent.putExtra("phone",phone)
-                    intent.putExtra("nationality",nationality)
-                    intent.putExtra("gender",gender)
-
+                    intent.putExtra("id",temp!!.id)
                     startActivity(intent)
 
 
 
                 }else{
 
-                    Toast.makeText(this@EditProfile, "Failed to save information", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@EditProfile, "Failed to edit information", Toast.LENGTH_SHORT)
                         .show()
                 }
             }
 
             override fun onFailure(call: Call<Participant>, t: Throwable) {
                 finish()
-                Toast.makeText(this@EditProfile, "Information save failed", Toast.LENGTH_SHORT)
+                Toast.makeText(this@EditProfile, "Information edit failed", Toast.LENGTH_SHORT)
                     .show()
 
             }

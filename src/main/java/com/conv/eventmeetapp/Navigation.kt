@@ -7,41 +7,34 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
+import com.conv.eventmeetapp.Models.Participant
+import com.conv.eventmeetapp.Services.BackEndService
+import com.conv.eventmeetapp.Services.ServiceBuilder
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import kotlinx.android.synthetic.main.navigation.*
+import android.os.StrictMode
+
+
 
 
 class Navigation : AppCompatActivity() {
 
     lateinit var toolbar: ActionBar
-    private var name = ""
-    private var email = ""
+
     private var id = ""
-    private var photo = ""
-    private var age = ""
-    private var occupation = ""
-    private var institution = ""
-    private var nationality = ""
-    private var gender = ""
-    private var phone = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.navigation)
 
-        var intent = intent
-        name = intent.getStringExtra("name")
-        email = intent.getStringExtra("email")
-        id = intent.getStringExtra("id")
-        photo = intent.getStringExtra("photo")
-        age = intent.getStringExtra("age")
-        occupation = intent.getStringExtra("occupation")
-        institution = intent.getStringExtra("institution")
-        phone = intent.getStringExtra("phone")
-        nationality = intent.getStringExtra("nationality")
-        gender = intent.getStringExtra("gender")
+        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
 
+        var intent = intent!!
+
+        id = intent.getStringExtra("id")
 
         toolbar = supportActionBar!!
         toolbar.title = "Profile"
@@ -70,7 +63,9 @@ class Navigation : AppCompatActivity() {
             }
             else{
                 signout()
-                finish()
+                //finish()
+                var intent = Intent(this, AuthenticationActivity::class.java)
+                startActivity(intent)
 
 
                 return@setOnNavigationItemSelectedListener true
@@ -102,23 +97,28 @@ class Navigation : AppCompatActivity() {
     override fun onBackPressed() {
         finish()
     }
-    fun getProfileData():Profile{
-        var profiledData = Profile(id, name, email, age, gender, occupation, institution, phone, nationality, photo)
-        return profiledData
+
+    fun getProfileInfo(): Participant {
+        val service = ServiceBuilder.buildService(BackEndService::class.java)
+        val requestCall = service.getParticipant(id)
+        var participant = requestCall.execute().body()!!
+        var profile = Participant(
+            participant.id,
+            participant.name,
+            participant.email,
+            participant.age,
+            participant.gender,
+            participant.occupation,
+            participant.institution,
+            participant.phone,
+            participant.nationality,
+            participant.photo
+        )
+        return profile
+
 
     }
 
 
 }
-data class Profile(
-    var id : String,
-    var name : String,
-    var email : String,
-    var age : String,
-    var gender : String,
-    var occupation : String?,
-    var institution : String?,
-    var phone : String,
-    var nationality : String?,
-    var photo : String?
-)
+

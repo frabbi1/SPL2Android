@@ -131,21 +131,13 @@ class AuthenticationActivity : AppCompatActivity(), Serializable {
                         startActivity(intent)
                     }else{
                         val intent = Intent(this@AuthenticationActivity, Navigation::class.java)
-                        intent.putExtra("name",temp?.name.toString())
-                        intent.putExtra("email",temp?.email.toString())
+//
                         intent.putExtra("id",temp?.id.toString())
-                        intent.putExtra("photo",temp?.photo.toString())
-                        intent.putExtra("occupation",temp?.occupation.toString())
-                        intent.putExtra("gender",temp?.gender.toString())
-                        intent.putExtra("institution",temp?.institution.toString())
-                        intent.putExtra("age",temp?.age.toString())
-                        intent.putExtra("phone",temp?.phone.toString())
-                        intent.putExtra("nationality",temp?.nationality.toString())
+//
                         startActivity(intent)
 
                     }
-                   Toast.makeText(this@AuthenticationActivity, value + "dhukse", Toast.LENGTH_SHORT)
-                       .show()
+
 
                 }else{
                     Toast.makeText(this@AuthenticationActivity, "Failed to retrieve details", Toast.LENGTH_SHORT)

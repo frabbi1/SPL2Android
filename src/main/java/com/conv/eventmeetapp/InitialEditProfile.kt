@@ -73,16 +73,9 @@ class InitialEditProfile : AppCompatActivity() {
                 if(response.isSuccessful){
                     var temp = response.body()
                     val intent = Intent(this@InitialEditProfile, Navigation::class.java)
-                    intent.putExtra("name",name)
-                    intent.putExtra("email",email)
-                    intent.putExtra("id",id)
-                    intent.putExtra("photo",photo)
-                    intent.putExtra("age",age)
-                    intent.putExtra("occupation",occupation)
-                    intent.putExtra("institution",institution)
-                    intent.putExtra("phone",phone)
-                    intent.putExtra("nationality",nationality)
-                    intent.putExtra("gender",gender)
+//
+                    intent.putExtra("id",temp?.id)
+//
 
                     startActivity(intent)
 

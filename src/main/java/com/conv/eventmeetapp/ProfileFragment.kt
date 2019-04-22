@@ -1,27 +1,44 @@
 package com.conv.eventmeetapp
 import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 import com.bumptech.glide.Glide
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.request.RequestOptions
+import com.conv.eventmeetapp.Models.Participant
+import com.conv.eventmeetapp.Services.BackEndService
+import com.conv.eventmeetapp.Services.ServiceBuilder
 
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 
 import kotlinx.android.synthetic.main.profile_fragment.view.*
+import retrofit2.Call
+import retrofit2.Response
 
 @GlideModule
 class ProfileFragment : Fragment(){
-    var mGoogleSignInClient: GoogleSignInClient? = null
-    lateinit var profile : Profile
+    //var mGoogleSignInClient: GoogleSignInClient? = null
+    private lateinit var id:String
+    lateinit var profile: Participant
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        var parent = activity as Navigation
+        profile = parent.getProfileInfo()
+
+    }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         var view = inflater.inflate(R.layout.profile_fragment, container, false)
         var parent = activity as Navigation
-        profile = parent.getProfileData()
+        //id = parent.getId()
+
+        //var profile = parent.b ()
 
         Glide.with(this).load(profile.photo).apply(RequestOptions.overrideOf(250,200))
             .error(Glide.with(this).load(R.drawable.blank_pro_pic)).into(view.proPic);
@@ -32,7 +49,7 @@ class ProfileFragment : Fragment(){
         view.occ.setText(profile.occupation)
         view.nat.setText(profile.nationality)
         view.insField.setText(profile.institution)
-        view.phoneField.setText(profile.phone)
+        view.phoneField.text = profile.phone
 
         view.editProfile.setOnClickListener {
             var intent = Intent(this.context, EditProfile::class.java)
@@ -58,4 +75,5 @@ class ProfileFragment : Fragment(){
     companion object {
         fun newInstance(): ProfileFragment = ProfileFragment()
     }
+
 }
