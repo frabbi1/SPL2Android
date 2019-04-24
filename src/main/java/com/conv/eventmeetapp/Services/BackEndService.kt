@@ -1,6 +1,6 @@
-package com.conv.eventmeetapp.Services
+package com.conv.eventmeetapp.services
 
-import com.conv.eventmeetapp.Models.Participant
+import com.conv.eventmeetapp.models.Participant
 import retrofit2.Call
 import retrofit2.http.*
 

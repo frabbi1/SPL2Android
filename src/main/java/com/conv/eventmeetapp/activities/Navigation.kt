@@ -1,21 +1,22 @@
-package com.conv.eventmeetapp
+package com.conv.eventmeetapp.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.conv.eventmeetapp.Models.Participant
-import com.conv.eventmeetapp.Services.BackEndService
-import com.conv.eventmeetapp.Services.ServiceBuilder
+import com.conv.eventmeetapp.models.Participant
+import com.conv.eventmeetapp.services.BackEndService
+import com.conv.eventmeetapp.services.ServiceBuilder
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import kotlinx.android.synthetic.main.navigation.*
 import android.os.StrictMode
-
-
+import com.conv.eventmeetapp.fragments.EventsFragmnet
+import com.conv.eventmeetapp.fragments.JoinEventFragment
+import com.conv.eventmeetapp.fragments.ProfileFragment
+import com.conv.eventmeetapp.R
 
 
 class Navigation : AppCompatActivity() {

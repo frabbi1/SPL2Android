@@ -1,9 +1,10 @@
-package com.conv.eventmeetapp
+package com.conv.eventmeetapp.activities
 
-import android.content.Intent
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.conv.eventmeetapp.R
 import kotlinx.android.synthetic.main.activity_main_frame.*
 
 class MainFrame : AppCompatActivity() {
@@ -17,6 +18,9 @@ class MainFrame : AppCompatActivity() {
             //startActivity(intent)
             finish()
 
+        }
+        btnCheckIn.setOnClickListener {
+            Toast.makeText(this, "Long Press", Toast.LENGTH_SHORT).show()
         }
         btnCheckIn.setOnLongClickListener {
             if(btnCheckIn.text.toString().toLowerCase() == "checked in"){

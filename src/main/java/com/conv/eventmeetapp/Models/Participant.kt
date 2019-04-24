@@ -1,4 +1,4 @@
-package com.conv.eventmeetapp.Models
+package com.conv.eventmeetapp.models
 
 data class Participant(
     var id : String,

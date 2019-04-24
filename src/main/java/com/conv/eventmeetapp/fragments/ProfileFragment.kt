@@ -1,25 +1,20 @@
-package com.conv.eventmeetapp
+package com.conv.eventmeetapp.fragments
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 
 import com.bumptech.glide.Glide
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.request.RequestOptions
-import com.conv.eventmeetapp.Models.Participant
-import com.conv.eventmeetapp.Services.BackEndService
-import com.conv.eventmeetapp.Services.ServiceBuilder
-
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.conv.eventmeetapp.activities.EditProfile
+import com.conv.eventmeetapp.models.Participant
+import com.conv.eventmeetapp.activities.Navigation
+import com.conv.eventmeetapp.R
 
 import kotlinx.android.synthetic.main.profile_fragment.view.*
-import retrofit2.Call
-import retrofit2.Response
 
 @GlideModule
 class ProfileFragment : Fragment(){
@@ -70,7 +65,8 @@ class ProfileFragment : Fragment(){
 
 
     companion object {
-        fun newInstance(): ProfileFragment = ProfileFragment()
+        fun newInstance(): ProfileFragment =
+            ProfileFragment()
     }
 
 }

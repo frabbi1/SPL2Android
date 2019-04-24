@@ -1,9 +1,8 @@
-package com.conv.eventmeetapp.Services
+package com.conv.eventmeetapp.services
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.TimeUnit
 
 object ServiceBuilder {
 

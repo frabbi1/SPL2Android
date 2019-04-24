@@ -1,13 +1,14 @@
-package com.conv.eventmeetapp
+package com.conv.eventmeetapp.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.Toast
-import com.conv.eventmeetapp.Models.Participant
-import com.conv.eventmeetapp.Services.BackEndService
-import com.conv.eventmeetapp.Services.ServiceBuilder
+import com.conv.eventmeetapp.models.Participant
+import com.conv.eventmeetapp.R
+import com.conv.eventmeetapp.services.BackEndService
+import com.conv.eventmeetapp.services.ServiceBuilder
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import kotlinx.android.synthetic.main.authentication.*
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
