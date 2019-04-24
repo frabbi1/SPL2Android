@@ -46,8 +46,6 @@ class AuthenticationActivity : AppCompatActivity(), Serializable {
 
     }
 
-
-
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -132,9 +130,7 @@ class AuthenticationActivity : AppCompatActivity(), Serializable {
                         startActivity(intent)
                     }else{
                         val intent = Intent(this@AuthenticationActivity, Navigation::class.java)
-//
                         intent.putExtra("id",temp?.id.toString())
-//
                         startActivity(intent)
 
                     }
