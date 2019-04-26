@@ -12,6 +12,10 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".class_activities.EventDetailsActivity">
+        </activity>
+        <activity android:name=".class_activities.participant_listActivity">
+        </activity>
         <activity android:name=".activities.AuthenticationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -21,6 +25,7 @@
         </activity>
         <activity
                 android:name=".activities.Navigation"
+                android:configChanges="orientation|keyboardHidden"
                 android:theme="@style/NavTheme">
         </activity>
         <activity android:name=".activities.InitialEditProfile">
@@ -29,6 +34,7 @@
         </activity>
         <activity android:name=".activities.MainFrame">
         </activity>
+
     </application>
 
 </manifest>

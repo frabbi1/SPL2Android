@@ -19,6 +19,8 @@ import com.conv.eventmeetapp.fragments.ProfileFragment
 import com.conv.eventmeetapp.R
 
 
+
+
 class Navigation : AppCompatActivity() {
 
     lateinit var toolbar: ActionBar
@@ -75,6 +77,7 @@ class Navigation : AppCompatActivity() {
 
         }
     }
+
     private fun signout(){
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestEmail()

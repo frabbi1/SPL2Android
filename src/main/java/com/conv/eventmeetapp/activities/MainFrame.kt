@@ -1,10 +1,12 @@
 package com.conv.eventmeetapp.activities
 
+import android.content.Intent
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.conv.eventmeetapp.R
+import com.conv.eventmeetapp.class_activities.EventDetailsActivity
 import kotlinx.android.synthetic.main.activity_main_frame.*
 
 class MainFrame : AppCompatActivity() {
@@ -12,6 +14,9 @@ class MainFrame : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_frame)
+
+
+
 
         btnSwitchOut.setOnClickListener {
             //var intent = Intent(this, Navigation::class.java)
@@ -35,5 +40,11 @@ class MainFrame : AppCompatActivity() {
             }
             true
         }
+        btnEvent.setOnClickListener {
+            var intent2 = Intent(this, EventDetailsActivity::class.java)
+            startActivity(intent2)
+
+        }
+
     }
 }

@@ -106,6 +106,7 @@
                 <ImageButton
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
+                        android:id="@+id/btnEvent"
                         android:textAlignment="center"
                         android:textColor="#b075ea"
                         android:src="@drawable/event"

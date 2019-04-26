@@ -7,6 +7,7 @@ import android.os.Handler
 import android.widget.Toast
 import com.conv.eventmeetapp.models.Participant
 import com.conv.eventmeetapp.R
+import com.conv.eventmeetapp.models.CurrentUser
 import com.conv.eventmeetapp.services.BackEndService
 import com.conv.eventmeetapp.services.ServiceBuilder
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -81,6 +82,8 @@ class AuthenticationActivity : AppCompatActivity(), Serializable {
                 var email = account.email.toString()
                 var id = account.id.toString()
                 var photo = account.photoUrl.toString()
+
+                CurrentUser.setUser(id)
                 //Log.i("AuthenticationActivity", name)
                 Toast.makeText(this, name, Toast.LENGTH_SHORT).show()
                 isNewUser(id,name,email,photo)
@@ -92,7 +95,7 @@ class AuthenticationActivity : AppCompatActivity(), Serializable {
 
     }
     override fun onBackPressed() {
-        count = count+1
+        count += 1
         if(count>=1){
             var i = Intent(Intent.ACTION_MAIN)
             i.addCategory(Intent.CATEGORY_HOME)
@@ -121,6 +124,7 @@ class AuthenticationActivity : AppCompatActivity(), Serializable {
                 if(response.isSuccessful){
                     var temp = response.body()
                     value = temp?.id.toString()
+
                     if(value == "0"){
                         val intent = Intent(this@AuthenticationActivity, InitialEditProfile::class.java)
                         intent.putExtra("name",name)
