@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">EventMeetApp</string>
+    <string name="title_activity_location">Event Location</string>
+    <string name="API_KEY">AIzaSyCOz5hLoATw_d_XgWMre7Qc92jWyNHNDLk</string>
+
 </resources>

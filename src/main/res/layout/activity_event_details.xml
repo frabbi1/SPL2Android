@@ -175,7 +175,45 @@
 
         />
 
-    </LinearLayout></LinearLayout>
+
+    </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/border"
+        >
+
+            <TextView
+
+                    android:layout_height="50dp"
+                    android:layout_width="120dp"
+
+                    android:text="Description  : "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="#0f1c69"
+
+
+            />
+
+            <TextView
+
+                    android:layout_height="50dp"
+                    android:layout_width="match_parent"
+                    android:text=""
+                    android:id="@+id/des"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    android:textColor="#000"
+
+
+            />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 

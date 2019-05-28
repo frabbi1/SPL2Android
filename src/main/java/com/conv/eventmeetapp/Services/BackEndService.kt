@@ -23,6 +23,15 @@ interface BackEndService {
     @GET("participants/{id}")
     fun getParticipant(@Path("id") id:String): Call<Participant>
 
+    @GET("participants/all/{id}")
+    fun getAllParticipants(@Path("id" )id:String):Call<List<Participant>>
+    @GET("event/joined/{id}")
+    fun getJoinedEvents(@Path("id" )id:String):Call<List<Event>>
+
     @GET("event/fetch")
     fun fetchEvent(@Query("id") id : Int, @Query("code") code:String): Call<Event>
+
+    @GET("file/photos/{id}")
+    fun getPhoto(@Path("id" )id:String): Call<List<String>>
+
 }

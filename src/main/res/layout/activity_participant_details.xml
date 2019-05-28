@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+
+
+>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="2"
+                android:orientation="vertical"
+
+        >
+            <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="#101b33"
+
+            >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+
+                        android:id="@+id/proPic"
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+
+
+
+                />
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:textAlignment="center"
+                        android:textSize="30sp"
+                        android:textColor="#fff"
+                        android:id="@+id/nameField"
+                />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+
+                    android:layout_weight="1"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="80dp"
+
+                    android:background="#9ca8ef"
+                    android:orientation="vertical">
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+
+                >
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="match_parent"
+                            android:layout_weight="3"
+                            android:text="Email : "
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="#0f1c69"
+
+
+                    />
+
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="match_parent"
+                            android:text=""
+                            android:id="@+id/emailField"
+                            android:textSize="20sp"
+                            android:layout_weight="1"
+                            android:textColor="#000"
+
+
+                    />
+
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+
+                >
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="match_parent"
+                            android:layout_weight="3"
+                            android:text="Gender : "
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="#0f1c69"
+
+
+                    />
+
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="match_parent"
+                            android:text="Male"
+                            android:id="@+id/gender"
+                            android:textSize="20sp"
+                            android:layout_weight="1"
+                            android:textColor="#000"
+
+
+                    />
+
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                >
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="match_parent"
+                            android:layout_weight="3"
+                            android:text="Age : "
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="#0f1c69"
+
+
+                    />
+
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="match_parent"
+                            android:text="20"
+                            android:id="@+id/ageField"
+                            android:textSize="20sp"
+                            android:layout_weight="1"
+                            android:textColor="#000"
+
+
+                    />
+
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                >
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="468dp"
+                            android:layout_weight="3"
+                            android:text="Phone No : "
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="#0f1c69"
+
+
+                    />
+
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="match_parent"
+                            android:text="01788400808"
+                            android:id="@+id/phoneField"
+                            android:textSize="20sp"
+                            android:layout_weight="1"
+                            android:textColor="#000"
+
+
+                    />
+
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                >
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="468dp"
+                            android:layout_weight="3"
+                            android:text="Occupation : "
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="#0f1c69"
+
+
+                    />
+
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="match_parent"
+                            android:text="Student"
+                            android:id="@+id/occ"
+                            android:textSize="20sp"
+                            android:layout_weight="1"
+                            android:textColor="#000"
+
+
+                    />
+
+
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                >
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="468dp"
+                            android:layout_weight="3"
+                            android:text="Institution : "
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="#0f1c69"
+
+
+                    />
+
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="match_parent"
+                            android:text="University of Dhaka"
+                            android:id="@+id/insField"
+                            android:textSize="20sp"
+                            android:layout_weight="1"
+                            android:textColor="#000"
+
+
+                    />
+
+
+                </LinearLayout>
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                >
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="468dp"
+                            android:layout_weight="3"
+                            android:text="Nationality : "
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="#0f1c69"
+
+
+                    />
+
+                    <TextView
+
+                            android:layout_height="50dp"
+                            android:layout_width="match_parent"
+                            android:text="Bangladeshi"
+                            android:id="@+id/nat"
+                            android:textSize="20sp"
+                            android:layout_weight="1"
+                            android:textColor="#000"
+
+
+                    />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

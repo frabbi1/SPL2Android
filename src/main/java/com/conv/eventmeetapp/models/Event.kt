@@ -5,6 +5,10 @@ data class Event (
     val name:String,
     val location:String,
     val start_date:String,
-    val end_date:String
+    val end_date:String,
+    val description:String,
+    val longitude:String,
+    val latitude:String,
+    val code:String
 )
 

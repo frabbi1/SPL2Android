@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.conv.eventmeetapp">
-
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
@@ -12,9 +17,33 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".activities.PhotoViewer">
+        </activity>
+        <activity android:name=".class_activities.Gallery">
+        </activity>
+        <activity android:name=".class_activities.Notification">
+        </activity>
+        <activity android:name=".class_activities.ParticipantDetails">
+        </activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="@string/API_KEY"/>
+
+        <activity
+                android:name=".class_activities.LocationActivity"
+                android:label="@string/title_activity_location">
+        </activity>
         <activity android:name=".class_activities.EventDetailsActivity">
         </activity>
-        <activity android:name=".class_activities.participant_listActivity">
+        <activity android:name=".class_activities.ParticipantListActivity">
         </activity>
         <activity android:name=".activities.AuthenticationActivity">
             <intent-filter>
@@ -34,7 +63,6 @@
         </activity>
         <activity android:name=".activities.MainFrame">
         </activity>
-
     </application>
 
 </manifest>

@@ -34,13 +34,13 @@ class ProfileFragment : Fragment(){
 
         Glide.with(this).load(profile.photo).apply(RequestOptions.overrideOf(250,200))
             .error(Glide.with(this).load(R.drawable.blank_pro_pic)).into(view.proPic);
-        view.nameField.setText(profile.name)
-        view.emailField.setText(profile.email)
-        view.gender.setText(profile.gender)
-        view.ageField.setText(profile.age)
-        view.occ.setText(profile.occupation)
-        view.nat.setText(profile.nationality)
-        view.insField.setText(profile.institution)
+        view.nameField.text = profile.name
+        view.emailField.text = profile.email
+        view.gender.text = profile.gender
+        view.ageField.text = profile.age
+        view.occ.text = profile.occupation
+        view.nat.text = profile.nationality
+        view.insField.text = profile.institution
         view.phoneField.text = profile.phone
 
         view.editProfile.setOnClickListener {

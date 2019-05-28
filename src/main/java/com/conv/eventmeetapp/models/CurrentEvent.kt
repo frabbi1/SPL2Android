@@ -7,6 +7,9 @@ object CurrentEvent {
     var location = ""
     var startDate = ""
     var endDate = ""
+    var description = ""
+    var longitude:String = ""
+    var latitude:String = ""
 
 
     fun setEventDetails(
@@ -14,7 +17,10 @@ object CurrentEvent {
         name:String,
         location:String,
         startDate:String,
-        endDate:String
+        endDate:String,
+        description:String,
+        longitude:String,
+        latitude:String
 
     ){
         this.id = id
@@ -22,6 +28,9 @@ object CurrentEvent {
         this.location = location
         this.startDate = startDate
         this.endDate = endDate
+        this.description = description
+        this.longitude = longitude
+        this.latitude = latitude
 
     }
 

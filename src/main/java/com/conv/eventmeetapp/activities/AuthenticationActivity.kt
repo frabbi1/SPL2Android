@@ -99,7 +99,7 @@ class AuthenticationActivity : AppCompatActivity(), Serializable {
         if(count>=1){
             var i = Intent(Intent.ACTION_MAIN)
             i.addCategory(Intent.CATEGORY_HOME)
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            i.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(i)
         }
         else{

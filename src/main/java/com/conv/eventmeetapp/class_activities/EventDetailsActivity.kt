@@ -16,6 +16,7 @@ class EventDetailsActivity : AppCompatActivity() {
         eventLoc.text = CurrentEvent.location
         sdate.text = CurrentEvent.startDate
         edate.text = CurrentEvent.endDate
+        des.text = CurrentEvent.description
 
     }
 }

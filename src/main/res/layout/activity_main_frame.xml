@@ -56,7 +56,7 @@
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-
+                    android:id="@+id/btnParticipant"
                     android:textAlignment="center"
                     android:textColor="#b075ea"
                     android:src="@drawable/participant"
@@ -140,6 +140,7 @@
                         android:textAlignment="center"
                         android:textColor="#b075ea"
                         android:src="@drawable/location"
+                        android:id="@+id/btnLocation"
                         android:background="@drawable/button_circle"
 
                 />
@@ -160,6 +161,7 @@
                     android:layout_height="match_parent">
                 <ImageButton
                         android:layout_width="match_parent"
+                        android:id="@+id/btnPhoto"
                         android:layout_height="100dp"
                         android:textAlignment="center"
                         android:textColor="#b075ea"
@@ -240,12 +242,14 @@
                         android:textAlignment="center"
                         android:textColor="#b075ea"
                         android:src="@drawable/notification"
+                        android:id="@+id/btnNotification"
                         android:background="@drawable/button_circle"
 
                 />
                 <TextView android:layout_width="match_parent"
                           android:layout_height="wrap_content"
                           android:text="Notification"
+
                           android:textSize="15sp"
                           android:textAlignment="center"
                           android:textColor="#fff"

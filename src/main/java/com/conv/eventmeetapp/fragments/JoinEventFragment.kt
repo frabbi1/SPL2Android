@@ -9,10 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.conv.eventmeetapp.activities.MainFrame
 import com.conv.eventmeetapp.R
-import com.conv.eventmeetapp.models.CurrentEvent
-import com.conv.eventmeetapp.models.CurrentUser
-
-import com.conv.eventmeetapp.models.Event
+import com.conv.eventmeetapp.models.*
 
 import com.conv.eventmeetapp.services.BackEndService
 import com.conv.eventmeetapp.services.ServiceBuilder
@@ -35,7 +32,7 @@ class JoinEventFragment : Fragment(){
             val requestCall = service.fetchEvent(id,code)
             requestCall.enqueue(object : retrofit2.Callback<Event>{
                 override fun onFailure(call: Call<Event>, t: Throwable) {
-                    Toast.makeText(this@JoinEventFragment.context, "Problem hoise", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@JoinEventFragment.context, "Problem occured", Toast.LENGTH_SHORT).show()
                     TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
                 }
 
@@ -48,7 +45,11 @@ class JoinEventFragment : Fragment(){
                         var location = result.location
                         var startDate = result.start_date
                         var endDate = result.end_date
-                        CurrentEvent.setEventDetails(id,name,location,startDate,endDate)
+                        var description = result.description
+                        var lon = result.longitude
+                        var lat = result.latitude
+
+                        CurrentEvent.setEventDetails(id,name,location,startDate,endDate,description,lon,lat)
                         registerParticipant()
                         var intent = Intent(this@JoinEventFragment.context, MainFrame::class.java)
                         startActivity(intent)
@@ -59,8 +60,8 @@ class JoinEventFragment : Fragment(){
 
 
             })
-            //var intent = Intent(this.context, MainFrame::class.java)
-            //startActivity(intent)
+
+
         }
         return view
     }
