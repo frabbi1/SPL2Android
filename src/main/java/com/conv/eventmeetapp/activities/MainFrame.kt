@@ -61,6 +61,14 @@ class MainFrame : AppCompatActivity() {
             var intent2 = Intent(this, Gallery::class.java)
             startActivity(intent2)
         }
+        btnFile.setOnClickListener{
+            var intent2 = Intent(this, Files::class.java)
+            startActivity(intent2)
+        }
+        btnNearme.setOnClickListener{
+            var intent2 = Intent(this, NearMe::class.java)
+            startActivity(intent2)
+        }
 
 
     }

@@ -1,9 +1,7 @@
 package com.conv.eventmeetapp.services
 
-import com.conv.eventmeetapp.models.CurrentUser
-import com.conv.eventmeetapp.models.Event
+import com.conv.eventmeetapp.models.*
 
-import com.conv.eventmeetapp.models.Participant
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -33,5 +31,11 @@ interface BackEndService {
 
     @GET("file/photos/{id}")
     fun getPhoto(@Path("id" )id:String): Call<List<String>>
+
+    @GET("file/resources/{id}")
+    fun getFile(@Path("id" )id:String): Call<List<File>>
+
+    @GET("event/nearme/{id}")
+    fun getPlace(@Path("id" )id:String): Call<List<Place>>
 
 }

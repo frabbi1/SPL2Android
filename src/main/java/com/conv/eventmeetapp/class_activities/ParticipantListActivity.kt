@@ -29,6 +29,7 @@ class ParticipantListActivity : AppCompatActivity() {
         var lm = LinearLayoutManager(this)
         lm.orientation = LinearLayoutManager.VERTICAL
         p_recView.layoutManager = lm
+
         val service = ServiceBuilder.buildService(BackEndService::class.java)
         var requestCall = service.getAllParticipants(CurrentEvent.id.toString())
 
