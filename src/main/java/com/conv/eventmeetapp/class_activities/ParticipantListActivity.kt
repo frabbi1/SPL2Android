@@ -40,8 +40,8 @@ class ParticipantListActivity : AppCompatActivity() {
                     //ParticipantSupplier.setList(p,p.name)
                     val adapter =  ParticipantsAdapter(this@ParticipantListActivity, p)
                     p_recView.adapter = adapter
-                    Toast.makeText(this@ParticipantListActivity, "hoise", Toast.LENGTH_SHORT)
-                        .show()
+                    //Toast.makeText(this@ParticipantListActivity, "hoise", Toast.LENGTH_SHORT)
+                     //   .show()
 
 
 

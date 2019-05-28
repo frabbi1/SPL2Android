@@ -43,8 +43,8 @@ class EventsFragmnet : Fragment(){
                     //ParticipantSupplier.setList(response.body()!!)
                     val adapter =  MyEventsAdapter(this@EventsFragmnet.context!!, e)
                     e_recView.adapter = adapter
-                    Toast.makeText(this@EventsFragmnet.context!!, "hoise", Toast.LENGTH_SHORT)
-                        .show()
+                    //Toast.makeText(this@EventsFragmnet.context!!, "hoise", Toast.LENGTH_SHORT)
+                      //  .show()
 
 
 

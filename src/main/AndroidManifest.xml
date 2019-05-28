@@ -17,6 +17,10 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".class_activities.RpList">
+        </activity>
+        <activity android:name=".class_activities.Profile">
+        </activity>
         <activity android:name=".activities.NearByMap">
         </activity>
         <activity android:name=".class_activities.NearMe">

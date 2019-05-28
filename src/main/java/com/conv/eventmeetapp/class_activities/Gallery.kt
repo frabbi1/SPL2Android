@@ -41,8 +41,8 @@ class Gallery : AppCompatActivity() {
                   //var x = listOf<String>("http://ec2-52-29-113-22.eu-central-1.compute.amazonaws.com/ema/uploads/photos/1559018506997download.jpg","http://ec2-52-29-113-22.eu-central-1.compute.amazonaws.com/ema/uploads/photos/1559018506994bg3.jpg","http://ec2-52-29-113-22.eu-central-1.compute.amazonaws.com/ema/uploads/photos/1558969922329details.png")
                    val adapter =  GalleryAdapter(this@Gallery, p)
                    gallery.adapter = adapter
-                    Toast.makeText(this@Gallery, "hoise", Toast.LENGTH_SHORT)
-                        .show()
+                    //Toast.makeText(this@Gallery, "hoise", Toast.LENGTH_SHORT)
+                      //  .show()
 
 
 

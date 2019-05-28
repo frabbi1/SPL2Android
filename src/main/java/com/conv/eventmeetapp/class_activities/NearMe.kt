@@ -37,8 +37,8 @@ class NearMe : AppCompatActivity() {
                     //ParticipantSupplier.setList(p,p.name)
                     val adapter =  NearMeAdapter(this@NearMe, p)
                     near_rec.adapter = adapter
-                    Toast.makeText(this@NearMe, "hoise", Toast.LENGTH_SHORT)
-                        .show()
+                    //Toast.makeText(this@NearMe, "hoise", Toast.LENGTH_SHORT)
+                       // .show()
 
 
 

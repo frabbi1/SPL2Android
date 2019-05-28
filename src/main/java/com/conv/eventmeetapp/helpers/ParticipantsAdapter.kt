@@ -49,7 +49,7 @@ class ParticipantsAdapter(val context:Context,val participants:List<Participant>
         }
         fun setData(p:Participant, pos: Int){
             itemView.txvName.text = p.name
-            Toast.makeText(context, p.photo,Toast.LENGTH_LONG).show()
+            //Toast.makeText(context, p.photo,Toast.LENGTH_LONG).show()
             Glide.with(context).load(p.photo).error(Glide.with(context).load(R.drawable.blank_pro_pic)).into(itemView.proPicCard)
             this.current = p
             this.curpos = pos

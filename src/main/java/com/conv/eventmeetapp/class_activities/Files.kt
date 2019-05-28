@@ -40,8 +40,8 @@ class Files : AppCompatActivity() {
                     //var x = listOf<String>("http://ec2-52-29-113-22.eu-central-1.compute.amazonaws.com/ema/uploads/photos/1559018506997download.jpg","http://ec2-52-29-113-22.eu-central-1.compute.amazonaws.com/ema/uploads/photos/1559018506994bg3.jpg","http://ec2-52-29-113-22.eu-central-1.compute.amazonaws.com/ema/uploads/photos/1558969922329details.png")
                     val adapter =  FileAdapter(this@Files, p)
                     file_rec.adapter = adapter
-                    Toast.makeText(this@Files, "hoise", Toast.LENGTH_SHORT)
-                        .show()
+                    //Toast.makeText(this@Files, "hoise", Toast.LENGTH_SHORT)
+                     //   .show()
 
 
 

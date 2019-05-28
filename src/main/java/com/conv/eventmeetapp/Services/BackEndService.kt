@@ -38,4 +38,7 @@ interface BackEndService {
     @GET("event/nearme/{id}")
     fun getPlace(@Path("id" )id:String): Call<List<Place>>
 
+    @GET("event/notification/{id}")
+    fun getNotification(@Path("id" )id:String): Call<List<String>>
+
 }

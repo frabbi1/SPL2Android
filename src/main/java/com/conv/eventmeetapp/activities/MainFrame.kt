@@ -69,6 +69,10 @@ class MainFrame : AppCompatActivity() {
             var intent2 = Intent(this, NearMe::class.java)
             startActivity(intent2)
         }
+        btnrp.setOnClickListener{
+            var intent2 = Intent(this, RpList::class.java)
+            startActivity(intent2)
+        }
 
 
     }
